@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <meta charset="UTF-8">
+     
+        <link rel="stylesheet" href="MOVIE.CSS">
+       
+        <script src="https://kit.fontawesome.com/a42e6f6754.js" crossorigin="anonymous"></script>
+    </head>
+
+
+    <body>
+       
+        <div class="container" id="container">
+            <nav>
+                <h1 class="logo"> MOVIE STORE </h1>
+                <div class="box">
+                <i class="fa fa-search" aria-hidden="true" style="color: palevioletred"></i>
+                <input placeholder="Search a film..."    id="input" type="search">
+                <span class="clear" onclick="document.getElementById('input').value=''"></span>
+                </div>
+            
+            </nav>
+   
+<!------------------------------------------------------------------------------>
+     <div class="content" id="content">
+     </div>
+
+            <!-- add Movie  -->
+
+        <button id="myBtn"> ADD MOVIE..
+            <i class="fa-solid fa-plus" style="color:white " style="font-weight:300" ></i>
+         </button>
+         <div id="myModal" class="myModal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add a new movie</h2>
+              </div>
+              
+
+               <form  class="modal-body" name="myForm" onsubmit="return validateForm()" method="post">
+
+                <input class="input_body" type="text" placeholder="movie name?" name="fname"> <br>
+                <input class="input_body" type="text" placeholder="movie gategory?" name="fgateg"> <br>
+                <input class="input_body" type="url" placeholder="picture of the movie?" name="ficon"> <br>
+                <input class="input_body" type="text" placeholder="a description?" name="fparg"> <br>
+                
+                <input class="add" type="submit" value="Submit" >
+
+              </form>
+              
+
+              <div class="modal-footer">
+                <h3>thank you...</h3>
+              </div>
+
+            </div>
+          
+          </div>
+        </div>
+<!---------------------------------delete--------------------------------------------->
+
+     <div id="pobab" class="pobab">
+     <form class="pobab-content" action="/action_page.php">
+       <div class="contain">
+        <span onclick="document.getElementById('pobab').style.display='none'" class="closet" title="Close Modal">×</span>
+         <h1>Delete Movie</h1>
+         <p>Are you sure you want to delete your account?</p>
+       
+         <div class="clearfix">
+           <button   class="cancelbtn">Cancel</button>
+           <button onclick="document.getElementById(`${data[i].id}`)" .style.display='none'   class="deletebtn">Delete</button>
+         </div>
+       </div>
+     </form>
+   </div>
+<!------------------------------------------------------------------------------>
+<!-------------------   update  ------------------------>
+ <div id="myModalUpdate" class="myModalUpdate">
+
+   
+    <div class="modal-contentUpdate">
+      <div class="modal-headerUpdate">
+        <span class="closee" id="idid">&times;</span>
+        <h2>Update movie</h2>
+      </div>
+
+      <div class="modal-bodyUpdate">
+        <input class="inputUpdate1" value=`data[i].name`  type="text" > <input class="inputUpdate2" type="text"  placeholder=" a new movie name?"> <br>
+        <input class="inputUpdate1" value=`data[i].category`  type="text" > <input class="inputUpdate2" type="text" placeholder="a new movie gategory?"><br>
+        <input class="inputUpdate1" value=`data[i].icon`  type="text" ><input class="inputUpdate2" type="text" placeholder=" a new picture of the movie?"> <br>
+        <input class="inputUpdate1" value=`data[i].parg`  type="url" ><input class="inputUpdate2" type="url" placeholder="a new description?"> <br>
+        <input class="inputUpdate1" value=`data[i].id`  type="number" > <input class="inputUpdate2" type="number" placeholder=" whats a new id ?"><br>
+        <button class="ubdate" > update</button>
+    </div>
+      <div class="modal-footerUpdate">
+        <h3>thank you...</h3>
+      </div>
+    </div>
+  
+  </div>
+
+<!---------------------------------------------------------------------------->
+<script src="MOVIE.JS"></script>
+    </body>
+</html>
+<!------------------------------------------------------------------------------>
